@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tryButton.css">
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- in="sourceGraphic" -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="highContrastGraphic" />
+                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+
+    <button id="gooey-button" onclick="play()">
+        <b>BẤM HỘ BỐ CÁI</b>
+        <span class="bubbles">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+        </span>
+    </button>
+    <!-- <div id="block"> -->
+        <img id="block" src="https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.15752-9/120421140_269215117499493_1039492536353189969_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=fJGkBHWUuUIAX8KEyXv&_nc_ht=scontent.fsgn3-1.fna&oh=27880c983671e6be5f404ca99b951536&oe=61DE061B" alt="">
+    <!-- </div> -->
+    <audio id="audio" controls loop src="Recording.m4a" style="display: none;"></audio>
+    <script>
+        function updown(){
+            document.getElementById('block').style.display='block';
+        }
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+        document.getElementById('gooey-button').onclick = function() {
+            updown(play());
+        }
+    </script>
+</body>
+</html>
